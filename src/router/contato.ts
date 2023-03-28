@@ -6,7 +6,11 @@ const router = Router();
 
 let contatos = Array();
 
-router.post('/contato', function (req, res) {
+router.get('/', function(req, res) {
+    res.send(contatos);
+});
+
+router.post('/', function (req, res) {
     let ok = true;
     let mensagem = "Contato salvo com sucesso!";  
 
@@ -44,8 +48,5 @@ router.post('/contato', function (req, res) {
     })
 });
 
-router.get('/contato', function(req, res) {
-    res.send(contatos);
-});
 
 export default router;
